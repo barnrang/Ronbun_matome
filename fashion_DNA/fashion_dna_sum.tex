@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\begin{document}
+Paper link - \url{https://arxiv.org/pdf/1609.02489.pdf}
+\section*{Input}
+\begin{enumerate}
+\item Image $177\times256$
+\item "expert labels" such as color, pattern, fabrics composition etc. The price labels were created by k-mean clustering. Label information was preprocessed into one-hot vectors.
+\end{enumerate}
+\section*{Label}
+${0,1}$ for i-th articles, j-th customer (as figure 1). 0 - hasn't bought, 1 - has bought. The data is devided into 4 parts.
+\begin{enumerate}
+\item training data for both customer and articles - $\Pi^{tt}$
+\item validation data for articles feature (articles unseen, trained customers). - $\Pi^{vt}$
+\item validation data for customer parameter (customers unseen, trained articles). - $\Pi^{tv}$
+\item all validation (new article, customers from $\Pi^{vv}$)
+\end{enumerate}
+\section*{Network}
+For better understanding, please refer to figure 4\\
+\begin{enumerate}
+\item {\bf Attribute network}\\
+4-layers connected neural network supplied by one-hot attributes(labels). The target is to extract the features from labels.
+\item {\bf Image network}\\
+CNN network, Alexnet according to the paper.
+\item {\bf Combined network}\\
+From 2 models above, concatenate the extracted feature and pass them through FC-256, Relu, dropout-0.2 then the final value is called "fDNA" (simply feature). Let's the input data (image, labels) is $\phi_i$ and the $\theta$ is the parameters. Therefore $f_i$ (i-th fDNA for i-th article) is $f_i=f(\phi_i, \theta)$
+\end{enumerate}
+\section*{Prediction \& Loss}
+Assume that we extracted the fDNA $f_i$ from the combined network, we model the probability of purchase the article-ith from customer-jth by
+\[p_{ij} = \sigma(f_i\cdot w_{j}+b_j)\]
+where $w_j, b_j$ is a factor associated with customer j-th (Each customer has their own parameters).
+The loss is calculated by the mean cross entropy loss.
+\section*{Training}
+\begin{enumerate}
+\item {\bf Training}\\
+Use the training data $\Pi_{tt}$ to update both network weight $\theta$ and customer weight $w_j, b_j$ 
+\item {\bf Article Validation}\\
+Straightforwardly pass the article validation data $\Pi_{vt}$.
+\item {\bf Customer Validation}\\
+Freeze the network parameter $\theta$ but update the the customers weight $w_j, b_j$ by passing data $\Pi_{tv}$.
+\item {\bf All validation}\\
+Similar to part 2, we pass data $\Pi_{vv}$. This step is for judging whether that the customer validation from part 3 generalizes well to unseen articles.
+\end{enumerate}
+\section*{Evaluation}
+Because the ratio of purchase is very low $E[P(\Pi_{ij}=1)] = 1.14\times 10^{-4}$, the overall prediction quality should not be determined by 0 or 1 instead it can be expressed by receiver operating characteristic (ROC) analysis (refer to Fig 6) and the score is the area under the ROC curve, called AUC score (refer: \url{https://www.medcalc.org/manual/roc-curves.php})
+\end{document}
+
