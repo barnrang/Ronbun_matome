@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.13)  22 APR 2018 16:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.13)  22 APR 2018 17:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -556,32 +556,32 @@ LaTeX Info: Redefining \nameref on input line 5.
 \openout3 = `fashion_dna_sum.out'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--22
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
 [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 48.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 55.
 
-[2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 48.
+[2] [3]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 55.
  (./fashion_dna_sum.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 48.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 48.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 55.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 55.
 Package rerunfilecheck Info: File `fashion_dna_sum.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 48.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 55.
  ) 
 Here is how much of TeX's memory you used:
- 5131 strings out of 492995
- 73135 string characters out of 6132704
+ 5136 strings out of 492995
+ 73182 string characters out of 6132704
  160360 words of memory out of 5000000
  8660 multiletter control sequences out of 15000+600000
  5175 words of font info for 20 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,5n,21p,411b,332s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,4n,21p,411b,406s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -591,10 +591,10 @@ sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
 cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
 al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local
 /texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on fashion_dna_sum.pdf (2 pages, 103574 bytes).
+Output written on fashion_dna_sum.pdf (3 pages, 105815 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
- 22 named destinations out of 1000 (max. 500000)
+ 87 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
+ 27 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
