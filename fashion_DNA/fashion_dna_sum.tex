@@ -7,14 +7,14 @@
 Paper link - \url{https://arxiv.org/pdf/1609.02489.pdf}
 \section*{Brief}
 Trying to predict whether the customer will purchase a product or not by supplying the product's data both image and attributes.
-\section*{Author}
+\section*{Authors}
 Christian Bracher, Sebastian Heinz, Roland Vollgraf - Zalando Research
 \section*{Date}
 8 September 2016
 \section*{Input}
 \begin{enumerate}
 \item Image $177\times256$
-\item "expert labels" such as color, pattern, fabrics composition etc. The price labels were created by k-mean clustering. Label information was preprocessed into one-hot vectors.
+\item ``expert labels'' such as color, pattern, fabrics composition etc. The price labels were created by k-mean clustering. Label information was preprocessed into one-hot vectors.
 \end{enumerate}
 \section*{Label}
 $\Pi_{ij} \in \{0,1\}$ for i-th articles, j-th customer. 0 - hasn't bought, 1 - has bought. The data is devided into 4 parts (refer to figure 1).
@@ -32,7 +32,7 @@ For better understanding, please refer to figure 4\\
 \item {\bf Image network}\\
 CNN network, Alexnet according to the paper.
 \item {\bf Combined network}\\
-From 2 models above, concatenate the extracted feature and pass them through FC-256, Relu, dropout-0.2 then the final value is called "fDNA" (simply feature). Let's the input data (image, labels) is $\phi_i$ and the $\theta$ is the parameters. Therefore $f_i$ (i-th fDNA for i-th article) is $f_i=f(\phi_i, \theta)$
+From 2 models above, concatenate the extracted feature and pass them through FC-256, Relu, dropout-0.2 then the final value is called ``fDNA'' (simply feature). Let's the input data (image, labels) is $\phi_i$ and the $\theta$ is the parameters. Therefore $f_i$ (i-th fDNA for i-th article) is $f_i=f(\phi_i, \theta)$
 \end{enumerate}
 \section*{Prediction \& Loss}
 Assume that we extracted the fDNA $f_i$ from the combined network, we model the probability of purchase the article-ith from customer-jth by
